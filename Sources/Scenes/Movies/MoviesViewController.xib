@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoviesViewController" customModule="OMDBClient" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="1e2-Ju-auS" id="lN3-li-Fvl"/>
                 <outlet property="view" destination="iN0-l3-epB" id="hmg-4I-QVl"/>
             </connections>
         </placeholder>
@@ -18,8 +19,26 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="always" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1e2-Ju-auS">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aOo-MP-una">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="1e2-Ju-auS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Wca-PL-GKZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1e2-Ju-auS" secondAttribute="trailing" id="crY-hD-uP0"/>
+                <constraint firstItem="1e2-Ju-auS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="hYy-Ps-STK"/>
+                <constraint firstAttribute="bottom" secondItem="1e2-Ju-auS" secondAttribute="bottom" id="peV-zf-Wqo"/>
+            </constraints>
             <point key="canvasLocation" x="-23" y="146"/>
         </view>
     </objects>

@@ -17,6 +17,9 @@
 		93A7F497269D347C00F8F9AA /* MoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7F496269D347C00F8F9AA /* MoviesUseCase.swift */; };
 		93A7F499269D348300F8F9AA /* MoviesNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7F498269D348300F8F9AA /* MoviesNavigator.swift */; };
 		93A7F49B269D349C00F8F9AA /* MoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A7F49A269D349C00F8F9AA /* MoviesViewController.xib */; };
+		93A7F49D269D385700F8F9AA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7F49C269D385700F8F9AA /* Constants.swift */; };
+		93A7F49F269D3C2000F8F9AA /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7F49E269D3C2000F8F9AA /* MovieCell.swift */; };
+		93A7F4A1269D3F7100F8F9AA /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7F4A0269D3F7100F8F9AA /* UICollectionViewExtensions.swift */; };
 		FDD34CFD463748AAD20F8DAF /* Pods_OMDBClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625643B43C5C6CDC35052C5A /* Pods_OMDBClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +38,9 @@
 		93A7F496269D347C00F8F9AA /* MoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesUseCase.swift; sourceTree = "<group>"; };
 		93A7F498269D348300F8F9AA /* MoviesNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesNavigator.swift; sourceTree = "<group>"; };
 		93A7F49A269D349C00F8F9AA /* MoviesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesViewController.xib; sourceTree = "<group>"; };
+		93A7F49C269D385700F8F9AA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		93A7F49E269D3C2000F8F9AA /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		93A7F4A0269D3F7100F8F9AA /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		EBA6DE855340191B424A250F /* Pods-OMDBClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMDBClient.release.xcconfig"; path = "Target Support Files/Pods-OMDBClient/Pods-OMDBClient.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +79,7 @@
 		93A7F473269D2E7500F8F9AA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				93A7F49C269D385700F8F9AA /* Constants.swift */,
 				93A7F48A269D2F8300F8F9AA /* AppEntry */,
 				93A7F490269D345100F8F9AA /* Scenes */,
 				93A7F48D269D33F000F8F9AA /* Ultilities */,
@@ -110,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				93A7F48E269D33FC00F8F9AA /* ViewModelType.swift */,
+				93A7F4A0269D3F7100F8F9AA /* UICollectionViewExtensions.swift */,
 			);
 			path = Ultilities;
 			sourceTree = "<group>";
@@ -125,6 +133,7 @@
 		93A7F491269D346400F8F9AA /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				93A7F49E269D3C2000F8F9AA /* MovieCell.swift */,
 				93A7F492269D346F00F8F9AA /* MoviesViewController.swift */,
 				93A7F494269D347600F8F9AA /* MoviesViewModel.swift */,
 				93A7F496269D347C00F8F9AA /* MoviesUseCase.swift */,
@@ -265,13 +274,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A7F4A1269D3F7100F8F9AA /* UICollectionViewExtensions.swift in Sources */,
 				93A7F48F269D33FC00F8F9AA /* ViewModelType.swift in Sources */,
 				93A7F495269D347600F8F9AA /* MoviesViewModel.swift in Sources */,
+				93A7F49F269D3C2000F8F9AA /* MovieCell.swift in Sources */,
 				93A7F493269D346F00F8F9AA /* MoviesViewController.swift in Sources */,
 				93A7F475269D2E7500F8F9AA /* AppDelegate.swift in Sources */,
 				93A7F497269D347C00F8F9AA /* MoviesUseCase.swift in Sources */,
 				93A7F499269D348300F8F9AA /* MoviesNavigator.swift in Sources */,
 				93A7F48C269D2F9300F8F9AA /* AppController.swift in Sources */,
+				93A7F49D269D385700F8F9AA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
