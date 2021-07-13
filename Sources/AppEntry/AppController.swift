@@ -18,6 +18,7 @@ struct AppController {
 
 private extension AppController {
     func makeRootViewController() -> UIViewController {
-        return ViewController()
+        let viewModel = MoviesViewModel()
+        return MoviesViewController(viewModel: viewModel)
     }
 }
