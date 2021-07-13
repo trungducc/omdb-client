@@ -18,8 +18,12 @@ struct AppController {
 
 private extension AppController {
     func makeRootViewController() -> UIViewController {
-        let viewModel = MoviesViewModel()
+        let navigationController = UINavigationController(nibName: nil, bundle: nil)
+        let useCase = DefaultMoviesUseCase(movieService: MockMovieClient())
+        let navigator = DefaultMoviesNavigator(navigationController: navigationController)
+        let viewModel = MoviesViewModel(useCase: useCase, navigator: navigator)
         let viewController = MoviesViewController(viewModel: viewModel)
-        return UINavigationController(rootViewController: viewController)
+        navigationController.viewControllers = [viewController]
+        return navigationController
     }
 }

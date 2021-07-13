@@ -20,4 +20,6 @@ class MovieCell: UICollectionViewCell {
     private func setupSubviews() {
         contentView.backgroundColor = .red
     }
+    
+    func configure(with movie: Movie) {}
 }
