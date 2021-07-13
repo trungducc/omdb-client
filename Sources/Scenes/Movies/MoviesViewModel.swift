@@ -8,6 +8,11 @@
 import RxCocoa
 
 final class MoviesViewModel: ViewModelType {
+    private struct Query: Equatable {
+        let text: String
+        let page: Int
+    }
+    
     private let useCase: MoviesUseCase
     private let navigator: MoviesNavigator
     
@@ -30,16 +35,16 @@ final class MoviesViewModel: ViewModelType {
             .debounce(.milliseconds(Constants.Movies.searchDebounceTime))
         
         let reload = queryChangedTrigger
-            .filter { !$0.isEmpty }
+            .filter { self.useCase.isValidQuery($0) }
             .do(onNext: { _ in
                 self.updateSnapshot(with: [], shouldAddLoadMoreSection: true)
             })
             .map { _ in }
         
-        let fetchMovies = { query in
-            self.useCase.fetchMovies(with: query, at: self.nextPage)
-                .withLatestFrom(input.queryChangedTrigger) { (movies: $0, currentQuery: $1) }
-                .filter { query == $0.currentQuery }
+        let fetchMovies: (Query) -> Driver<[Movie]> = { query in
+            self.useCase.fetchMovies(with: query.text, at: query.page)
+                .withLatestFrom(input.queryChangedTrigger) { (movies: $0, currentText: $1) }
+                .filter { query.text == $0.currentText }
                 .map { $0.movies }
                 .do(onNext: { movies in
                     if movies.isEmpty, self.nextPage == Constants.Movies.firstPageIndex {
@@ -56,17 +61,19 @@ final class MoviesViewModel: ViewModelType {
         }
         let loadMore = input.loadMoreTrigger
             .withLatestFrom(input.queryChangedTrigger) { $1 }
+            .map { Query(text: $0, page: self.nextPage) }
+            .distinctUntilChanged()
             .flatMapLatest { query in
                 fetchMovies(query)
             }.map { _ in }
         
         let welcome = queryChangedTrigger
-            .filter { $0.isEmpty }
+            .filter { !self.useCase.isValidQuery($0) }
             .do(onNext: { _ in
                 self.emptyViewState.accept(EmptyView.State.welcome)
             })
         let hidden = queryChangedTrigger
-            .filter { !$0.isEmpty }
+            .filter { self.useCase.isValidQuery($0) }
             .do(onNext: { _ in
                 self.emptyViewState.accept(EmptyView.State.hidden)
             })

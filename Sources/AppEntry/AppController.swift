@@ -19,11 +19,18 @@ struct AppController {
 private extension AppController {
     func makeRootViewController() -> UIViewController {
         let navigationController = UINavigationController(nibName: nil, bundle: nil)
-        let useCase = DefaultMoviesUseCase(movieService: MockMovieClient())
+        let useCase = DefaultMoviesUseCase(movieService: OMDBClient.default)
         let navigator = DefaultMoviesNavigator(navigationController: navigationController)
         let viewModel = MoviesViewModel(useCase: useCase, navigator: navigator)
         let viewController = MoviesViewController(viewModel: viewModel)
         navigationController.viewControllers = [viewController]
         return navigationController
     }
+}
+
+extension OMDBClient {
+    static let `default` = OMDBClient(
+        baseURL: URL(string: Constants.OMDBClient.basePath)!,
+        apiKey: Constants.OMDBClient.apiKey
+    )
 }

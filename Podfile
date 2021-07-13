@@ -7,5 +7,7 @@ target 'OMDBClient' do
   pod 'RxSwift', '6.1.0'
   pod 'RxCocoa', '6.1.0'
   pod 'SnapKit', '5.0.1'
+  pod 'Nuke', '9.5.0'
+  pod 'Alamofire', '~> 5.2'
 
 end

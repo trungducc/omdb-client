@@ -9,6 +9,7 @@ import RxSwift
 
 protocol MoviesUseCase {
     func fetchMovies(with query: String, at page: Int) -> Observable<[Movie]>
+    func isValidQuery(_ query: String) -> Bool
 }
 
 final class DefaultMoviesUseCase {
@@ -20,7 +21,11 @@ final class DefaultMoviesUseCase {
 }
 
 extension DefaultMoviesUseCase: MoviesUseCase {
+    func isValidQuery(_ query: String) -> Bool {
+        query.count >= 3
+    }
+    
     func fetchMovies(with query: String, at page: Int) -> Observable<[Movie]> {
-        return movieService.fetchMovies(with: query, at: page).asObservable()
+        movieService.fetchMovies(with: query, at: page).asObservable()
     }
 }
