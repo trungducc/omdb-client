@@ -21,3 +21,9 @@ MVVM with reactive programming has been used to separate into small layers which
 - **Alamofire**: Use some convince function when working with network APIs
 - **SnapKit**: Make the code easier to read when using autolayout manually
 - **Nuke**: Effectively fetching, caching and decompressing image
+
+### Overview
+
+|         Movies List       |        Movie Detail       |
+|---------------------------|---------------------------|
+|![](Screenshots/movies.png)|![](Screenshots/detail.png)|
