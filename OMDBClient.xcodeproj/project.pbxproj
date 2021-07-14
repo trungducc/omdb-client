@@ -32,6 +32,12 @@
 		93A7F4CF269DF66A00F8F9AA /* DataRequestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7F4CE269DF66A00F8F9AA /* DataRequestExtensions.swift */; };
 		93A7F4D1269DF68E00F8F9AA /* EncodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7F4D0269DF68E00F8F9AA /* EncodableExtensions.swift */; };
 		93A7F4D4269DF6C200F8F9AA /* OMDBSearchMoviesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7F4D3269DF6C200F8F9AA /* OMDBSearchMoviesRequest.swift */; };
+		93A7F4D7269E586A00F8F9AA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7F4D6269E586A00F8F9AA /* DetailViewController.swift */; };
+		93A7F4D9269E587300F8F9AA /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7F4D8269E587300F8F9AA /* DetailViewModel.swift */; };
+		93A7F4DB269E587B00F8F9AA /* DetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7F4DA269E587B00F8F9AA /* DetailUseCase.swift */; };
+		93A7F4DF269E588D00F8F9AA /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A7F4DE269E588D00F8F9AA /* DetailViewController.xib */; };
+		93A7F4E1269E58FB00F8F9AA /* OMDBFetchMovieDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7F4E0269E58FB00F8F9AA /* OMDBFetchMovieDetailRequest.swift */; };
+		93A7F4E3269E5AE900F8F9AA /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7F4E2269E5AE900F8F9AA /* ActivityIndicator.swift */; };
 		FDD34CFD463748AAD20F8DAF /* Pods_OMDBClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625643B43C5C6CDC35052C5A /* Pods_OMDBClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +74,12 @@
 		93A7F4CE269DF66A00F8F9AA /* DataRequestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequestExtensions.swift; sourceTree = "<group>"; };
 		93A7F4D0269DF68E00F8F9AA /* EncodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtensions.swift; sourceTree = "<group>"; };
 		93A7F4D3269DF6C200F8F9AA /* OMDBSearchMoviesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDBSearchMoviesRequest.swift; sourceTree = "<group>"; };
+		93A7F4D6269E586A00F8F9AA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		93A7F4D8269E587300F8F9AA /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		93A7F4DA269E587B00F8F9AA /* DetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUseCase.swift; sourceTree = "<group>"; };
+		93A7F4DE269E588D00F8F9AA /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		93A7F4E0269E58FB00F8F9AA /* OMDBFetchMovieDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDBFetchMovieDetailRequest.swift; sourceTree = "<group>"; };
+		93A7F4E2269E5AE900F8F9AA /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		EBA6DE855340191B424A250F /* Pods-OMDBClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMDBClient.release.xcconfig"; path = "Target Support Files/Pods-OMDBClient/Pods-OMDBClient.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +164,7 @@
 				93A7F4C8269DF29700F8F9AA /* StringExtensions.swift */,
 				93A7F4CE269DF66A00F8F9AA /* DataRequestExtensions.swift */,
 				93A7F4D0269DF68E00F8F9AA /* EncodableExtensions.swift */,
+				93A7F4E2269E5AE900F8F9AA /* ActivityIndicator.swift */,
 			);
 			path = Ultilities;
 			sourceTree = "<group>";
@@ -160,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				93A7F491269D346400F8F9AA /* Movies */,
+				93A7F4D5269E585900F8F9AA /* Detail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -210,8 +224,20 @@
 			isa = PBXGroup;
 			children = (
 				93A7F4D3269DF6C200F8F9AA /* OMDBSearchMoviesRequest.swift */,
+				93A7F4E0269E58FB00F8F9AA /* OMDBFetchMovieDetailRequest.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		93A7F4D5269E585900F8F9AA /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				93A7F4D6269E586A00F8F9AA /* DetailViewController.swift */,
+				93A7F4D8269E587300F8F9AA /* DetailViewModel.swift */,
+				93A7F4DA269E587B00F8F9AA /* DetailUseCase.swift */,
+				93A7F4DE269E588D00F8F9AA /* DetailViewController.xib */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		BF6CB49E1ACF1E23427470D5 /* Frameworks */ = {
@@ -296,6 +322,7 @@
 				93A7F481269D2E7600F8F9AA /* LaunchScreen.storyboard in Resources */,
 				93A7F49B269D349C00F8F9AA /* MoviesViewController.xib in Resources */,
 				93A7F47E269D2E7600F8F9AA /* Assets.xcassets in Resources */,
+				93A7F4DF269E588D00F8F9AA /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,12 +375,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A7F4E1269E58FB00F8F9AA /* OMDBFetchMovieDetailRequest.swift in Sources */,
 				93A7F4A1269D3F7100F8F9AA /* UICollectionViewExtensions.swift in Sources */,
 				93A7F4AE269D761B00F8F9AA /* EmptyView.swift in Sources */,
+				93A7F4E3269E5AE900F8F9AA /* ActivityIndicator.swift in Sources */,
+				93A7F4D7269E586A00F8F9AA /* DetailViewController.swift in Sources */,
 				93A7F4D4269DF6C200F8F9AA /* OMDBSearchMoviesRequest.swift in Sources */,
 				93A7F4A4269D527900F8F9AA /* MovieClient.swift in Sources */,
 				93A7F4C7269DF21500F8F9AA /* UIImageExtensions.swift in Sources */,
 				93A7F4CB269DF5FC00F8F9AA /* OMDBClient.swift in Sources */,
+				93A7F4D9269E587300F8F9AA /* DetailViewModel.swift in Sources */,
+				93A7F4DB269E587B00F8F9AA /* DetailUseCase.swift in Sources */,
 				93A7F4A7269D532100F8F9AA /* Movie.swift in Sources */,
 				93A7F48F269D33FC00F8F9AA /* ViewModelType.swift in Sources */,
 				93A7F495269D347600F8F9AA /* MoviesViewModel.swift in Sources */,

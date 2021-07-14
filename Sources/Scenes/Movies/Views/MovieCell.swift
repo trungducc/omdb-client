@@ -20,9 +20,9 @@ class MovieCell: UICollectionViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 2
+        label.numberOfLines = 3
         label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 19)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         return label
     }()
     

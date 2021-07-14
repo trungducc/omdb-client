@@ -26,6 +26,10 @@ extension OMDBClient: MovieClient {
         return send(request).map { $0.results ?? [] }
     }
     
+    func fetchMovieDetail(with id: String) -> Single<Movie> {
+        let request = OMDBFetchMovieDetailRequest(id: id)
+        return send(request)
+    }
 }
 
 private extension OMDBClient {

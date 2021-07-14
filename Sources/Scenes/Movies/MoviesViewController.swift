@@ -49,6 +49,12 @@ class MoviesViewController: UIViewController {
         configureDataSource()
         bindViewModel()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
 }
 
 private extension MoviesViewController {
@@ -58,8 +64,6 @@ private extension MoviesViewController {
 
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-
-        navigationController?.navigationBar.prefersLargeTitles = true
         
         let spacing = Constants.Movies.spacing
         collectionView.register(of: MovieCell.self)

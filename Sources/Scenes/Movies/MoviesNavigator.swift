@@ -21,6 +21,9 @@ final class DefaultMoviesNavigator {
 
 extension DefaultMoviesNavigator: MoviesNavigator {
     func toDetail(of movie: Movie) {
-        print("COMMING SOON")
+        let useCase = DefaultDetailUseCase(movieService: OMDBClient.default)
+        let viewModel = DetailViewModel(useCase: useCase, movie: movie)
+        let detailViewController = DetailViewController(viewModel: viewModel)
+        navigationController.pushViewController(detailViewController, animated: true)
     }
 }
